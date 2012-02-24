@@ -5,32 +5,35 @@
 	position: relative;
 }
 
-body {
-	background-color: #333;
-	background: url(img/subtle_zebra_3d.png) repeat;
-	padding: 50px 250px;
-}
+html, body { height: 100%; width: 100%; }
+body { background: url(img/subtle_zebra_3d.png) repeat #eee; }
 
 #main {
 	background-color: rgba(255,255,255,0.4);
-	margin: 30px auto;
-	width: 632px;
 	box-shadow: 0 0 100px 10px rgba(0,0,0,.2);
+	height: 420px;
+	left: 50%;
+	margin-left: -316px;
+	margin-top: -210px;
+	position: absolute;
+	top: 50%;
+	width: 632px;
 }
 
 .card {
+	-webkit-transition: box-shadow .3s;
+	background: rgba(221,221,221,.4);
 	display: block;
 	float: left;
-	margin-left: 1px;
-	margin-bottom: 1px;
 	height: 210px;
-	width: 210px;
-	background: rgba(221,221,221,.4);
-	padding: 0 15px;
+	margin-bottom: 1px;
+	margin-left: 1px;
 	overflow: hidden;
+	padding: 0 15px;
+	width: 210px;
 }
 
-.card:hover { box-shadow: inset 0 0 55px 5px #dfdfdf; }
+.card:hover { box-shadow: inset 0 0 55px 5px #dddddd; }
 a.card { color: #222; text-decoration: none; }
 
 .card:nth-child(3n+1) { margin-left: 0; }
@@ -39,33 +42,55 @@ a.card { color: #222; text-decoration: none; }
 .card.logo { padding: 0; }
 
 .card div {
+	-webkit-transition: all .3s ease-in-out;
+	background: green;
+	bottom: 210px;
 	content: '';
 	display: block;
 	height: 210px;
-	width: 210px;
-	background: green;
-	position: absolute;
-	bottom: 210px;
 	left: 0;
 	opacity: 0;
-	-webkit-transition: all .3s ease-in-out;
+	position: absolute;
+	width: 210px;
 }
 
+/*last 3*/
 .card:nth-last-child(-n+3) div { bottom: -210px; left: 0; }
+
+/*left column*/
 .card:nth-child(3n+1) div { bottom: 0; left: -210px; }
+
+/*right column*/
 .card:nth-child(3n) div { bottom: 0; left: 210px; }
+
+/*top right*/
+.card:nth-child(3) div { bottom: 210px; left: 210px; }
+
+/*bottom right*/
+.card:last-child div { bottom: -210px; left: 210px; }
+
+/*bottom left*/
+.card:nth-last-child(3) div { bottom: -210px; left: -210px; }
 
 .card:hover div { bottom: 0; left: 0; opacity: .9; }
 
 .card.github div      { background-color: #2f86c2; }
 .card.tutsplus div    { background-color: #e56718; }
 .card.twitter div     { color: transparent; background: url(img/twitter_newbird_white.png) -45px -45px #33ccff; }
-.card.gplus div       { background-color: #ae2d1e; }
+.card.gplus div       { background-color: #222; }
 .card.themeforest div { background-color: #8c5e2d; }
-
 
 .ipa {
 	font-family: serif;
 	font-size: 0.8em;
 	padding-left: 3px;
+}
+
+h2 {
+	font-family: "Shadows Into Light Two";
+}
+
+p {
+	font-family: "Open Sans";
+	font-size: 13px;
 }
