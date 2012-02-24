@@ -1,0 +1,66 @@
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	position: relative;
+}
+
+body {
+	background-color: #333;
+	background: url(img/subtle_zebra_3d.png) repeat;
+	padding: 50px 250px;
+}
+
+#main {
+	background-color: rgba(255,255,255,0.4);
+	padding: 20px;
+	margin: 30px auto;
+	width: 672px;
+}
+
+.card_container {
+	float: left;
+	margin-left: 1px;
+	margin-bottom: 1px;
+
+	height: 210px;
+	width: 210px;
+	z-index: 1;
+	-webkit-perspective: 1000;
+}
+
+.card_container:nth-of-type(3n+1) {
+	margin-left: 0;
+}
+
+.card_container:nth-last-child(-n+3) {
+	margin-bottom: 0;
+}
+
+.card {
+	background: green;
+	-webkit-transform-style: preserve-3d;
+	-webkit-transition: -webkit-transform 1s;
+	-webkit-transform-origin: right center;
+	width: 100%;
+	height: 100%;
+}
+
+.face {
+	background-color: green;
+	color: #fff;
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	-webkit-backface-visibility: hidden;
+}
+
+.back.face {
+	-webkit-transform: rotateY(180deg);
+}
+
+.card_container:hover .card {
+	-webkit-transform: translateX(-100%) rotateY(-180deg) ;
+	/*box-shadow: 0px 0px 10px #333;*/
+	box-shadow: 0px 0px 20px rgba(0,0,0,.5);
+}
