@@ -29,7 +29,6 @@ body { background: url(img/subtle_zebra_3d.png) repeat #eee; }
 .card {
 	-webkit-transform-style: preserve-3d;
 	-webkit-transition: -webkit-transform 1s;
-	-webkit-transform-origin: right center;
 }
 
 .face {
