@@ -192,9 +192,11 @@ input:focus, textarea:focus {
 	cursor: pointer;
 }
 
-.sent {
+.postmark {
 	position: absolute;
 	top: 60px;
 	right: 5px;
 	z-index: 2;
+	display: none;
 }
+.postmark.sent { display: block; }

@@ -10,7 +10,32 @@ konami.code = function() {
 konami.load();
 
 $(function() {
+
 	$('.logo').on('click', function(e) {
 		$('.card').toggleClass('flip');
 	});
+
+	$('form').on('submit', function(e) {
+		e.preventDefault();
+		$.ajax({
+			url: 'contact.php',
+			type: 'POST',
+			data: {
+				name: $('input[name=name]', this).val(),
+				email: $('input[name=email]', this).val(),
+				message: $('textarea[name=message]', this).val()
+			},
+			success: function(data, textStaus, jqXHR) {
+				$('.postmark').addClass('sent');
+				alert('success');
+				console.log('stuff:', data, textStaus, jqXHR);
+			},
+			error: function(jqXHR, textStaus, errorThrown) {
+				$('.postmark').addClass('sent');
+				alert('error!');
+				console.log('stuff', jqXHR, textStaus, errorThrown);
+			}
+		});
+	});
+
 });
