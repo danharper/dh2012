@@ -18,9 +18,42 @@ body { background: url(img/subtle_zebra_3d.png) repeat #eee; }
 	position: absolute;
 	top: 50%;
 	width: 632px;
+	-webkit-perspective: 1000;
+}
+
+.card, .face {
+	height: 100%;
+	width: 100%;
 }
 
 .card {
+	-webkit-transform-style: preserve-3d;
+	-webkit-transition: -webkit-transform 1s;
+	-webkit-transform-origin: right center;
+}
+
+.face {
+
+	-webkit-backface-visibility: hidden;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.back.face {
+	-webkit-transform: rotateY(180deg);
+	background: yellow;
+}
+
+.card:hover, .konami .card {
+	-webkit-transform: rotateY(-180deg) ;
+}
+
+
+
+
+.block {
 	-webkit-transition: box-shadow .3s;
 	background: rgba(221,221,221,.4);
 	display: block;
@@ -33,15 +66,15 @@ body { background: url(img/subtle_zebra_3d.png) repeat #eee; }
 	width: 210px;
 }
 
-.card:hover { box-shadow: inset 0 0 55px 5px #dddddd; }
-a.card { color: #222; text-decoration: none; }
+.block:hover { box-shadow: inset 0 0 55px 5px #dddddd; }
+a.block { color: #222; text-decoration: none; }
 
-.card:nth-child(3n+1) { margin-left: 0; }
-.card:nth-last-child(-n+3) { margin-bottom: 0; }
+.block:nth-child(3n+1) { margin-left: 0; }
+.block:nth-last-child(-n+3) { margin-bottom: 0; }
 
-.card.logo { padding: 0; }
+.block.logo { padding: 0; }
 
-.card div {
+.block div {
 	-webkit-transition: all .3s ease-in-out;
 	background: green;
 	bottom: 210px;
@@ -55,32 +88,32 @@ a.card { color: #222; text-decoration: none; }
 }
 
 /*last 3*/
-.card:nth-last-child(-n+3) div { bottom: -210px; left: 0; }
+.block:nth-last-child(-n+3) div { bottom: -210px; left: 0; }
 
 /*left column*/
-.card:nth-child(3n+1) div { bottom: 0; left: -210px; }
+.block:nth-child(3n+1) div { bottom: 0; left: -210px; }
 
 /*right column*/
-.card:nth-child(3n) div { bottom: 0; left: 210px; }
+.block:nth-child(3n) div { bottom: 0; left: 210px; }
 
 /*top right*/
-.card:nth-child(3) div { bottom: 210px; left: 210px; }
+.block:nth-child(3) div { bottom: 210px; left: 210px; }
 
 /*bottom right*/
-.card:last-child div { bottom: -210px; left: 210px; }
+.block:last-child div { bottom: -210px; left: 210px; }
 
 /*bottom left*/
-.card:nth-last-child(3) div { bottom: -210px; left: -210px; }
+.block:nth-last-child(3) div { bottom: -210px; left: -210px; }
 
-.card:hover div { bottom: 0; left: 0; opacity: .9; }
+.block:hover div { bottom: 0; left: 0; opacity: .9; }
 
-.card.github div      { background-color: #2f86c2; }
-.card.tutsplus div    { background-color: #e56718; }
-.card.twitter div     { color: transparent; background: url(img/twitter_newbird_white.png) -45px -45px #33ccff; }
-.card.gplus div       { background-color: #222; }
-.card.themeforest div { background-color: #8c5e2d; }
+.block.github div      { background-color: #2f86c2; }
+.block.tutsplus div    { background-color: #e56718; }
+.block.twitter div     { color: transparent; background: url(img/twitter_newbird_white.png) -45px -45px #33ccff; }
+.block.gplus div       { background-color: #222; }
+.block.themeforest div { background-color: #8c5e2d; }
 
-.konami .card div {
+.konami .block div {
 	bottom: 0;
 	left: 0;
 	opacity: 1;
