@@ -43,3 +43,9 @@ a.card { color: #222; text-decoration: none; }
 .card.twitter:hover     { background-color: #33ccff; }
 .card.gplus:hover       { background-color: #ae2d1e; }
 .card.themeforest:hover { background-color: #8c5e2d; }
+
+.ipa {
+	font-family: serif;
+	font-size: 0.8em;
+	padding-left: 3px;
+}
