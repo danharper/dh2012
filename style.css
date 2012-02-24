@@ -80,6 +80,12 @@ a.card { color: #222; text-decoration: none; }
 .card.gplus div       { background-color: #222; }
 .card.themeforest div { background-color: #8c5e2d; }
 
+.konami .card div {
+	bottom: 0;
+	left: 0;
+	opacity: 1;
+}
+
 .ipa {
 	font-family: serif;
 	font-size: 0.8em;
