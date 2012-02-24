@@ -94,7 +94,7 @@ a.block { color: #222; text-decoration: none; }
 
 .block div {
 	-webkit-transition: all .3s ease-in-out;
-	background: green;
+	background-color: #c91111;
 	bottom: 210px;
 	content: '';
 	display: block;
@@ -125,11 +125,11 @@ a.block { color: #222; text-decoration: none; }
 
 .block:hover div { bottom: 0; left: 0; opacity: .9; }
 
-.block.github div      { background-color: #2f86c2; }
-.block.tutsplus div    { background-color: #e56718; }
-.block.twitter div     { color: transparent; background: url(img/twitter_newbird_white.png) -45px -45px #33ccff; }
-.block.gplus div       { background-color: #222; }
-.block.themeforest div { background-color: #8c5e2d; }
+.block.github div      { background: url(img/github.png) center no-repeat #2f86c2; }
+.block.tutsplus div    { background: url(img/tutsplus.png) center no-repeat #e56718; }
+.block.twitter div     { background: url(img/twitter.png) center no-repeat #33ccff; }
+.block.gplus div       { background: url(img/googleplus.png) center no-repeat #121212; }
+.block.themeforest div { background: url(img/themeforest.png) center no-repeat #8c5e2d; }
 
 .konami .block div {
 	bottom: 0;
