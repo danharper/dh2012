@@ -13,57 +13,32 @@ body {
 
 #main {
 	background-color: rgba(255,255,255,0.4);
-	padding: 20px;
 	margin: 30px auto;
-	width: 672px;
-}
-
-.card_container {
-	float: left;
-	margin-left: 1px;
-	margin-bottom: 1px;
-
-	height: 210px;
-	width: 210px;
-	z-index: 1;
-	-webkit-perspective: 1000;
-}
-
-.card_container:nth-of-type(3n+1) {
-	margin-left: 0;
-}
-
-.card_container:nth-last-child(-n+3) {
-	margin-bottom: 0;
+	width: 632px;
 }
 
 .card {
-	background: green;
-	-webkit-transform-style: preserve-3d;
-	-webkit-transform-origin: right center;
-	width: 100%;
-	height: 100%;
+	display: block;
+	float: left;
+	margin-left: 1px;
+	margin-bottom: 1px;
+	height: 210px;
+	width: 210px;
+	background: rgba(221,221,221,.4);
+	padding: 0 15px;
+	-webkit-transition: background-color 0.3s;
 }
 
-.back.face {
-	/*-webkit-transform: rotateY(180deg);*/
-	opacity: 0;
-}
+.card:hover { background-color: #ccc; }
+a.card { color: #222; text-decoration: none; }
 
-.face {
-	background-color: green;
-	color: #fff;
-	position: absolute;
-	-webkit-transition: opacity 0.6s;
-	height: 100%;
-	width: 100%;
-	-webkit-backface-visibility: hidden;
-}
+.card:nth-child(3n+1) { margin-left: 0; }
+.card:nth-last-child(-n+3) { margin-bottom: 0; }
 
+.card.logo { padding: 0; }
 
-.card_container:hover .back.face {
-	opacity: 1;
-	/*-webkit-transform: translateX(-100%) rotateY(-180deg) ;*/
-	/*box-shadow: 0px 0px 10px #333;*/
-	box-shadow: 0px 0px 20px rgba(0,0,0,.5);
-}
+.card.github:hover      { background-color: #2f86c2; }
+.card.tutsplus:hover    { background-color: #e56718; }
+.card.twitter:hover     { background-color: #33ccff; }
+.card.gplus:hover       { background-color: #ae2d1e; }
+.card.themeforest:hover { background-color: #8c5e2d; }
