@@ -55,7 +55,7 @@ a.card { color: #222; text-decoration: none; }
 .card:nth-child(3n+1) div { bottom: 0; left: -210px; }
 .card:nth-child(3n) div { bottom: 0; left: 210px; }
 
-.card:hover div { bottom: 0; left: 0; opacity: 1; }
+.card:hover div { bottom: 0; left: 0; opacity: .9; }
 
 .card.github div      { background-color: #2f86c2; }
 .card.tutsplus div    { background-color: #e56718; }
