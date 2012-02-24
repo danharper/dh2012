@@ -25,24 +25,24 @@ body {
 	margin-bottom: 1px;
 	height: 210px;
 	width: 210px;
-	background-color: rgba(221,221,221,.4);
+	background: rgba(221,221,221,.4);
 	padding: 0 15px;
-	-webkit-transition: background-color, color 0.3s;
+	-webkit-transition: background, color 1.3s;
 }
 
-.card:hover { background-color: #ccc; color: #222; }
-a.card { color: transparent; text-decoration: none; }
+.card:hover { background-color: #ccc; }
+a.card { color: #222; text-decoration: none; }
 
 .card:nth-child(3n+1) { margin-left: 0; }
 .card:nth-last-child(-n+3) { margin-bottom: 0; }
 
 .card.logo { padding: 0; }
 
-.card.twitter { background-image: url(img/twitter_newbird_white.png); background-position: -45px -45px; }
+.card.twitter {  }
 
 .card.github:hover      { background-color: #2f86c2; }
 .card.tutsplus:hover    { background-color: #e56718; }
-.card.twitter:hover     { background-color: #33ccff; }
+.card.twitter:hover     { color: transparent; background: url(img/twitter_newbird_white.png) -45px -45px #33ccff; }
 .card.gplus:hover       { background-color: #ae2d1e; }
 .card.themeforest:hover { background-color: #8c5e2d; }
 
