@@ -27,10 +27,10 @@ body {
 	width: 210px;
 	background: rgba(221,221,221,.4);
 	padding: 0 15px;
-	-webkit-transition: background, color 1.3s;
+	overflow: hidden;
 }
 
-.card:hover { background-color: #ccc; }
+.card:hover { box-shadow: inset 0 0 55px 5px #dfdfdf; }
 a.card { color: #222; text-decoration: none; }
 
 .card:nth-child(3n+1) { margin-left: 0; }
@@ -38,13 +38,31 @@ a.card { color: #222; text-decoration: none; }
 
 .card.logo { padding: 0; }
 
-.card.twitter {  }
+.card div {
+	content: '';
+	display: block;
+	height: 210px;
+	width: 210px;
+	background: green;
+	position: absolute;
+	bottom: 210px;
+	left: 0;
+	opacity: 0;
+	-webkit-transition: all .3s ease-in-out;
+}
 
-.card.github:hover      { background-color: #2f86c2; }
-.card.tutsplus:hover    { background-color: #e56718; }
-.card.twitter:hover     { color: transparent; background: url(img/twitter_newbird_white.png) -45px -45px #33ccff; }
-.card.gplus:hover       { background-color: #ae2d1e; }
-.card.themeforest:hover { background-color: #8c5e2d; }
+.card:nth-last-child(-n+3) div { bottom: -210px; left: 0; }
+.card:nth-child(3n+1) div { bottom: 0; left: -210px; }
+.card:nth-child(3n) div { bottom: 0; left: 210px; }
+
+.card:hover div { bottom: 0; left: 0; opacity: 1; }
+
+.card.github div      { background-color: #2f86c2; }
+.card.tutsplus div    { background-color: #e56718; }
+.card.twitter div     { color: transparent; background: url(img/twitter_newbird_white.png) -45px -45px #33ccff; }
+.card.gplus div       { background-color: #ae2d1e; }
+.card.themeforest div { background-color: #8c5e2d; }
+
 
 .ipa {
 	font-family: serif;
