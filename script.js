@@ -8,3 +8,9 @@ konami.code = function() {
 	$('body').toggleClass('konami');
 };
 konami.load();
+
+$(function() {
+	$('.logo').on('click', function(e) {
+		$('.card').toggleClass('flip');
+	});
+});

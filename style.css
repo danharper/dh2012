@@ -7,10 +7,9 @@
 
 html, body { height: 100%; width: 100%; }
 body { background: url(img/subtle_zebra_3d.png) repeat #eee; }
+/*body.konami { background: url(http://danharper.me/assets/images/bg-large.png) repeat; }*/
 
 #main {
-	background-color: rgba(255,255,255,0.4);
-	box-shadow: 0 0 100px 10px rgba(0,0,0,.2);
 	height: 420px;
 	left: 50%;
 	margin-left: -316px;
@@ -31,23 +30,20 @@ body { background: url(img/subtle_zebra_3d.png) repeat #eee; }
 	-webkit-transition: -webkit-transform 1s;
 }
 
+.card.flip { -webkit-transform: rotateY(-180deg); }
+
 .face {
-
 	-webkit-backface-visibility: hidden;
-
+	background-color: rgba(255,255,255,0.4);
+	box-shadow: 0 0 100px 10px rgba(0,0,0,.2);
 	position: absolute;
 	top: 0;
 	left: 0;
+	z-index: 1;
 }
 
-.back.face {
-	-webkit-transform: rotateY(180deg);
-	background: yellow;
-}
+.back.face { -webkit-transform: rotateY(180deg); }
 
-.card:hover, .konami .card {
-	-webkit-transform: rotateY(-180deg) ;
-}
 
 
 
