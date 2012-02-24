@@ -27,12 +27,12 @@ $(function() {
 			},
 			success: function(data, textStaus, jqXHR) {
 				$('.postmark').addClass('sent');
-				alert('success');
+				alert('Message Sent :)');
 				console.log('stuff:', data, textStaus, jqXHR);
 			},
 			error: function(jqXHR, textStaus, errorThrown) {
 				$('.postmark').addClass('sent');
-				alert('error!');
+				alert('There was an error sending your message :(');
 				console.log('stuff', jqXHR, textStaus, errorThrown);
 			}
 		});
