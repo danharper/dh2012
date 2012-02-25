@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<title>Dan Harper | Web Developer</title>
-	<meta name="description" content="">
+	<meta name="description" content="PHP and JavaScript web developer">
 	<meta name="viewport" content="width=device-width">
 	<link rel="stylesheet" href="h5bp.css">
 	<link rel="stylesheet" href="style.css">
@@ -63,15 +63,9 @@
 				</header>
 				<h1>Contact Me</h1>
 				<form method="post" action="contact.php">
-					<p>
-						<input type="text" name="name" placeholder="Name">
-					</p>
-					<p>
-						<input type="email" name="email" placeholder="Email">
-					</p>
-					<p> 
-						<textarea name="message" placeholder="Message"></textarea>
-					</p>
+					<p><input type="text" name="name" placeholder="Name"></p>
+					<p><input type="email" name="email" placeholder="Email"></p>
+					<p><textarea name="message" placeholder="Message"></textarea></p>
 					<input type="submit" value="Send" class="send">
 					<img src="img/loading.gif" class="sending">
 			</section>
@@ -80,15 +74,15 @@
 
 	</div>
 
-	<!-- // <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script> -->
-	<script src="jquery.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="jquery.js"><\/script>')</script>
 	<script src="script.js"></script>
 
 	<script>
-		// var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-		// (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-		// g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-		// s.parentNode.insertBefore(g,s)}(document,'script'));
+		var _gaq=[['_setAccount','UA-5086243-1'],['_trackPageview']];
+		(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+		g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+		s.parentNode.insertBefore(g,s)}(document,'script'));
 	</script>
 </body>
 </html>
