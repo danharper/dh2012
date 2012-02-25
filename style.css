@@ -1,7 +1,6 @@
 * {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
-	-ms-box-sizing: border-box;
 	box-sizing: border-box;
 	position: relative;
 }
@@ -19,10 +18,6 @@ body { background: url(img/subtle_zebra_3d.png) repeat #eee; }
 	top: 50%;
 	width: 632px;
 	-webkit-perspective: 1000;
-	-moz-perspective: 1000;
-	-ms-perspective: 1000;
-	-o-perspective: 1000;
-	perspective: 1000;
 }
 
 .card, .face {
@@ -33,30 +28,23 @@ body { background: url(img/subtle_zebra_3d.png) repeat #eee; }
 .card {
 	-webkit-transform-style: preserve-3d;
 	-webkit-transition: -webkit-transform 1s;
+
 	-webkit-animation: 1s ease-in;
 	-webkit-animation-fill-mode: both;
 	-webkit-animation-name: slick;
 
-	-moz-transform-style: preserve-3d;
-	-moz-transition: -webkit-transform 1s;
 	-moz-animation: 1s ease-in;
 	-moz-animation-fill-mode: both;
 	-moz-animation-name: slick;
 
-	-ms-transform-style: preserve-3d;
-	-ms-transition: -webkit-transform 1s;
 	-ms-animation: 1s ease-in;
 	-ms-animation-fill-mode: both;
 	-ms-animation-name: slick;
 
-	-o-transform-style: preserve-3d;
-	-o-transition: -webkit-transform 1s;
 	-o-animation: 1s ease-in;
 	-o-animation-fill-mode: both;
 	-o-animation-name: slick;
 
-	transform-style: preserve-3d;
-	transition: -webkit-transform 1s;
 	animation: 1s ease-in;
 	animation-fill-mode: both;
 	animation-name: slick;
@@ -117,38 +105,31 @@ body { background: url(img/subtle_zebra_3d.png) repeat #eee; }
 	}
 }
 
-.card.flip {
-	-webkit-transform: rotateY(-180deg);
-	-moz-transform: rotateY(-180deg);
-	-ms-transform: rotateY(-180deg);
-	-o-transform: rotateY(-180deg);
-	transform: rotateY(-180deg);
-}
+.card.flip { -webkit-transform: rotateY(-180deg); }
 
 .face {
 	-webkit-backface-visibility: hidden;
-	-moz-backface-visibility: hidden;
-	-ms-backface-visibility: hidden;
-	-o-backface-visibility: hidden;
-	backface-visibility: hidden;
 	background-color: rgba(255,255,255,0.4);
 	box-shadow: 0 0 100px 10px rgba(0,0,0,.2);
 	position: absolute;
 	top: 0;
 	left: 0;
+	/*z-index: 1;*/
 }
 
-.front.face { z-index: 1; }
+.front.face {
+	z-index: 2;
+}
 
 .back.face {
 	-webkit-transform: rotateY(180deg);
-	-moz-transform: rotateY(180deg);
-	-ms-transform: rotateY(180deg);
-	-o-transform: rotateY(180deg);
-	transform: rotateY(180deg);
 	background: url(img/paper.png) repeat;
 	padding: 0 20px;
+	display: none;
 }
+
+.flip .front.face { display: none; }
+.flip .back.face { display: block; }
 
 .back.face header {
 	background: url(img/mail.png) repeat-x;
@@ -173,6 +154,9 @@ body { background: url(img/subtle_zebra_3d.png) repeat #eee; }
 	float: left;
 	margin: 0;
 }
+
+
+
 
 .block {
 	-webkit-transition: box-shadow .3s;
@@ -396,25 +380,26 @@ input:focus, textarea:focus {
 }
 
 h1 span {
-	-webkit-animation: .4s linear;
+	-webkit-animation: .4s ease;
 	-webkit-animation-fill-mode: both;
 	-webkit-animation-name: sentAlert;
 
-	-moz-animation: .4s linear;
+	-moz-animation: .4s ease;
 	-moz-animation-fill-mode: both;
 	-moz-animation-name: sentAlert;
 
-	-ms-animation: .4s linear;
+	-ms-animation: .4s ease;
 	-ms-animation-fill-mode: both;
 	-ms-animation-name: sentAlert;
 
-	-o-animation: .4s linear;
+	-o-animation: .4s ease;
 	-o-animation-fill-mode: both;
 	-o-animation-name: sentAlert;
 
-	animation: .4s linear;
+	animation: .4s ease;
 	animation-fill-mode: both;
 	animation-name: sentAlert;
+
 	color: #468847;
 	font-size: 0.8em;
 	padding-left: 20px;
