@@ -28,6 +28,20 @@ body { background: url(img/subtle_zebra_3d.png) repeat #eee; }
 .card {
 	-webkit-transform-style: preserve-3d;
 	-webkit-transition: -webkit-transform 1s;
+	-webkit-animation: 1s ease-in;
+	-webkit-animation-fill-mode: both;
+	-webkit-animation-name: slick;
+}
+
+@-webkit-keyframes slick {
+	0% {
+		margin-top: -80px;
+		opacity: 0;
+	}
+	100% {
+		margin-top: 0;
+		opacity: 1;
+	}
 }
 
 .card.flip { -webkit-transform: rotateY(-180deg); }
