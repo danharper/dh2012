@@ -23,6 +23,8 @@ $(function() {
 
 	$('form').on('submit', function(e) {
 		e.preventDefault();
+		var $heading = $('.back.face h1')
+		$heading.find('span').remove();
 		$.ajax({
 			url: 'contact.php',
 			type: 'POST',
@@ -32,14 +34,12 @@ $(function() {
 				message: $('textarea[name=message]', this).val()
 			},
 			success: function(data, textStaus, jqXHR) {
-				$('.postmark').addClass('sent');
-				alert('Message Sent :)');
-				console.log('stuff:', data, textStaus, jqXHR);
+				$heading.append('<span>Message Sent :)</span>');
+				$('.postmark').toggleClass('sent');
 			},
 			error: function(jqXHR, textStaus, errorThrown) {
-				$('.postmark').addClass('sent');
-				alert('There was an error sending your message :(');
-				console.log('stuff', jqXHR, textStaus, errorThrown);
+				$heading.append('<span class="error">There was an error sending :\\</span>');
+				$('.postmark').removeClass('sent');
 			}
 		});
 	});

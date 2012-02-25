@@ -14,6 +14,12 @@ if ($_POST['name']) {
 
 	if ($sent) {
 		echo 'Message Sent';
+		mail(
+			$name.' <'.$email.'>',
+			'Your message to Dan Harper',
+			'Your email has been sent, I\'ll be in touch soon. :)'."\n\nYour Message:\n".wordwrap($message, 70),
+			'From: noreply@danharper.me'
+		);
 	}
 	else {
 		echo 'Message Not Sent';

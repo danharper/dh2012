@@ -197,6 +197,43 @@ input:focus, textarea:focus {
 	top: 60px;
 	right: 5px;
 	z-index: 2;
-	display: none;
+	opacity: 0;
 }
-.postmark.sent { display: block; }
+
+.postmark.sent {
+	-webkit-animation: .4s linear;
+	-webkit-animation-fill-mode: both;
+	-webkit-animation-name: stamp;
+}
+
+@-webkit-keyframes stamp {
+	0% {
+		-webkit-transform: scale(4);
+		opacity: 0;
+	}
+	100% {
+		-webkit-transform: scale(1);
+		opacity: 1;
+	}
+}
+
+h1 span {
+	-webkit-animation: .4s linear;
+	-webkit-animation-fill-mode: both;
+	-webkit-animation-name: sentAlert;
+	color: #468847;
+	font-size: 0.8em;
+	padding-left: 20px;
+}
+h1 span.error { color: #ba2224; }
+
+@-webkit-keyframes sentAlert {
+	0% {
+		margin-left: -80px;
+		opacity: 0;
+	}
+	100% {
+		margin-left: 0px;
+		opacity: 1;
+	}
+}
