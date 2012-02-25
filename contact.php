@@ -21,3 +21,6 @@ if ($_POST['name']) {
 	}
 
 }
+else {
+	header('Location: ./#contact');
+}

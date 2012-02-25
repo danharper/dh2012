@@ -11,7 +11,13 @@ konami.load();
 
 $(function() {
 
+	if (window.location.hash === '#contact') {
+		$('.card').addClass('flip');
+	}
+
 	$('.logo').on('click', function(e) {
+		e.preventDefault();
+		window.location.hash = $(this).data('hash') || '';
 		$('.card').toggleClass('flip');
 	});
 
