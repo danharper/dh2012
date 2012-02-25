@@ -131,6 +131,9 @@ body { background: url(img/subtle_zebra_3d.png) repeat #eee; }
 .flip .front.face { display: none; }
 .flip .back.face { display: block; }
 
+/*webkit only (needed for 3d transform which doesn't work right in FF)*/
+.websqldatabase .back.face, .websqldatabase .front.face { display: block; }
+
 .back.face header {
 	background: url(img/mail.png) repeat-x;
 	margin: 0 -20px;
