@@ -53,6 +53,10 @@ body { background: url(img/subtle_zebra_3d.png) repeat #eee; }
 	position: absolute;
 	top: 0;
 	left: 0;
+	/*z-index: 1;*/
+}
+
+.front.face {
 	z-index: 1;
 }
 
