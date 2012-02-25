@@ -1,6 +1,7 @@
 * {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
 	box-sizing: border-box;
 	position: relative;
 }
@@ -18,6 +19,10 @@ body { background: url(img/subtle_zebra_3d.png) repeat #eee; }
 	top: 50%;
 	width: 632px;
 	-webkit-perspective: 1000;
+	-moz-perspective: 1000;
+	-ms-perspective: 1000;
+	-o-perspective: 1000;
+	perspective: 1000;
 }
 
 .card, .face {
@@ -31,6 +36,30 @@ body { background: url(img/subtle_zebra_3d.png) repeat #eee; }
 	-webkit-animation: 1s ease-in;
 	-webkit-animation-fill-mode: both;
 	-webkit-animation-name: slick;
+
+	-moz-transform-style: preserve-3d;
+	-moz-transition: -webkit-transform 1s;
+	-moz-animation: 1s ease-in;
+	-moz-animation-fill-mode: both;
+	-moz-animation-name: slick;
+
+	-ms-transform-style: preserve-3d;
+	-ms-transition: -webkit-transform 1s;
+	-ms-animation: 1s ease-in;
+	-ms-animation-fill-mode: both;
+	-ms-animation-name: slick;
+
+	-o-transform-style: preserve-3d;
+	-o-transition: -webkit-transform 1s;
+	-o-animation: 1s ease-in;
+	-o-animation-fill-mode: both;
+	-o-animation-name: slick;
+
+	transform-style: preserve-3d;
+	transition: -webkit-transform 1s;
+	animation: 1s ease-in;
+	animation-fill-mode: both;
+	animation-name: slick;
 }
 
 @-webkit-keyframes slick {
@@ -44,24 +73,79 @@ body { background: url(img/subtle_zebra_3d.png) repeat #eee; }
 	}
 }
 
-.card.flip { -webkit-transform: rotateY(-180deg); }
+@-moz-keyframes slick {
+	0% {
+		margin-top: -80px;
+		opacity: 0;
+	}
+	100% {
+		margin-top: 0;
+		opacity: 1;
+	}
+}
+
+@-ms-keyframes slick {
+	0% {
+		margin-top: -80px;
+		opacity: 0;
+	}
+	100% {
+		margin-top: 0;
+		opacity: 1;
+	}
+}
+
+@-o-keyframes slick {
+	0% {
+		margin-top: -80px;
+		opacity: 0;
+	}
+	100% {
+		margin-top: 0;
+		opacity: 1;
+	}
+}
+
+@keyframes slick {
+	0% {
+		margin-top: -80px;
+		opacity: 0;
+	}
+	100% {
+		margin-top: 0;
+		opacity: 1;
+	}
+}
+
+.card.flip {
+	-webkit-transform: rotateY(-180deg);
+	-moz-transform: rotateY(-180deg);
+	-ms-transform: rotateY(-180deg);
+	-o-transform: rotateY(-180deg);
+	transform: rotateY(-180deg);
+}
 
 .face {
 	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	-ms-backface-visibility: hidden;
+	-o-backface-visibility: hidden;
+	backface-visibility: hidden;
 	background-color: rgba(255,255,255,0.4);
 	box-shadow: 0 0 100px 10px rgba(0,0,0,.2);
 	position: absolute;
 	top: 0;
 	left: 0;
-	/*z-index: 1;*/
 }
 
-.front.face {
-	z-index: 1;
-}
+.front.face { z-index: 1; }
 
 .back.face {
 	-webkit-transform: rotateY(180deg);
+	-moz-transform: rotateY(180deg);
+	-ms-transform: rotateY(180deg);
+	-o-transform: rotateY(180deg);
+	transform: rotateY(180deg);
 	background: url(img/paper.png) repeat;
 	padding: 0 20px;
 }
@@ -73,8 +157,12 @@ body { background: url(img/subtle_zebra_3d.png) repeat #eee; }
 }
 
 .back.face .stamp {
-	float: right;
 	-webkit-transform: rotate(-4deg);
+	-moz-transform: rotate(-4deg);
+	-ms-transform: rotate(-4deg);
+	-o-transform: rotate(-4deg);
+	transform: rotate(-4deg);
+	float: right;
 	position: absolute;
 	right: 10px;
 	z-index: 1;
@@ -86,11 +174,12 @@ body { background: url(img/subtle_zebra_3d.png) repeat #eee; }
 	margin: 0;
 }
 
-
-
-
 .block {
 	-webkit-transition: box-shadow .3s;
+	-moz-transition: box-shadow .3s;
+	-ms-transition: box-shadow .3s;
+	-o-transition: box-shadow .3s;
+	transition: box-shadow .3s;
 	background: rgba(221,221,221,.4);
 	display: block;
 	float: left;
@@ -112,6 +201,10 @@ a.block { color: #222; text-decoration: none; }
 
 .block div {
 	-webkit-transition: all .3s ease-in-out;
+	-moz-transition: all .3s ease-in-out;
+	-ms-transition: all .3s ease-in-out;
+	-o-transition: all .3s ease-in-out;
+	transition: all .3s ease-in-out;
 	background-color: #c91111;
 	bottom: 210px;
 	content: '';
@@ -229,6 +322,22 @@ input:focus, textarea:focus {
 	-webkit-animation: .4s linear;
 	-webkit-animation-fill-mode: both;
 	-webkit-animation-name: stamp;
+
+	-moz-animation: .4s linear;
+	-moz-animation-fill-mode: both;
+	-moz-animation-name: stamp;
+
+	-ms-animation: .4s linear;
+	-ms-animation-fill-mode: both;
+	-ms-animation-name: stamp;
+
+	-o-animation: .4s linear;
+	-o-animation-fill-mode: both;
+	-o-animation-name: stamp;
+
+	animation: .4s linear;
+	animation-fill-mode: both;
+	animation-name: stamp;
 }
 
 @-webkit-keyframes stamp {
@@ -242,10 +351,70 @@ input:focus, textarea:focus {
 	}
 }
 
+@-moz-keyframes stamp {
+	0% {
+		-moz-transform: scale(4);
+		opacity: 0;
+	}
+	100% {
+		-moz-transform: scale(1);
+		opacity: 1;
+	}
+}
+
+@-ms-keyframes stamp {
+	0% {
+		-ms-transform: scale(4);
+		opacity: 0;
+	}
+	100% {
+		-ms-transform: scale(1);
+		opacity: 1;
+	}
+}
+
+@-o-keyframes stamp {
+	0% {
+		-o-transform: scale(4);
+		opacity: 0;
+	}
+	100% {
+		-o-transform: scale(1);
+		opacity: 1;
+	}
+}
+
+@keyframes stamp {
+	0% {
+		transform: scale(4);
+		opacity: 0;
+	}
+	100% {
+		transform: scale(1);
+		opacity: 1;
+	}
+}
+
 h1 span {
 	-webkit-animation: .4s linear;
 	-webkit-animation-fill-mode: both;
 	-webkit-animation-name: sentAlert;
+
+	-moz-animation: .4s linear;
+	-moz-animation-fill-mode: both;
+	-moz-animation-name: sentAlert;
+
+	-ms-animation: .4s linear;
+	-ms-animation-fill-mode: both;
+	-ms-animation-name: sentAlert;
+
+	-o-animation: .4s linear;
+	-o-animation-fill-mode: both;
+	-o-animation-name: sentAlert;
+
+	animation: .4s linear;
+	animation-fill-mode: both;
+	animation-name: sentAlert;
 	color: #468847;
 	font-size: 0.8em;
 	padding-left: 20px;
@@ -253,6 +422,50 @@ h1 span {
 h1 span.error { color: #ba2224; }
 
 @-webkit-keyframes sentAlert {
+	0% {
+		margin-left: -80px;
+		opacity: 0;
+	}
+	100% {
+		margin-left: 0px;
+		opacity: 1;
+	}
+}
+
+@-moz-keyframes sentAlert {
+	0% {
+		margin-left: -80px;
+		opacity: 0;
+	}
+	100% {
+		margin-left: 0px;
+		opacity: 1;
+	}
+}
+
+@-ms-keyframes sentAlert {
+	0% {
+		margin-left: -80px;
+		opacity: 0;
+	}
+	100% {
+		margin-left: 0px;
+		opacity: 1;
+	}
+}
+
+@-o-keyframes sentAlert {
+	0% {
+		margin-left: -80px;
+		opacity: 0;
+	}
+	100% {
+		margin-left: 0px;
+		opacity: 1;
+	}
+}
+
+@keyframes sentAlert {
 	0% {
 		margin-left: -80px;
 		opacity: 0;
