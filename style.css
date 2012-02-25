@@ -182,6 +182,13 @@ input.send {
 	position: absolute;
 	right: -90px;
 	bottom: 0;
+	z-index: 2;
+}
+
+img.sending {
+	position: absolute;
+	right: -60px;
+	bottom: 30px;
 }
 
 input:focus, textarea:focus {
@@ -236,4 +243,8 @@ h1 span.error { color: #ba2224; }
 		margin-left: 0px;
 		opacity: 1;
 	}
+}
+
+[required] {
+	background: none !important;
 }

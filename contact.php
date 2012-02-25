@@ -1,9 +1,16 @@
 <?php
-if ($_POST['name']) {
+if ($_POST) {
 
 	$name = $_POST['name'];
 	$email = $_POST['email'];
 	$message = $_POST['message'];
+
+	if ( ! $name)
+		its_bad('You must provide a name');
+	if ( ! filter_var($email, FILTER_VALIDATE_EMAIL))
+		its_bad('You must provide a valid email address');
+	if ( ! $message)
+		its_bad('You must provide a message');
 
 	$sent = mail(
 		'Dan Harper <contact@danharper.me>',
@@ -13,20 +20,36 @@ if ($_POST['name']) {
 	);
 
 	if ($sent) {
-		echo 'Message Sent';
 		mail(
 			$name.' <'.$email.'>',
 			'Your message to Dan Harper',
 			'Your email has been sent, I\'ll be in touch soon. :)'."\n\nYour Message:\n".wordwrap($message, 70),
 			'From: noreply@danharper.me'
 		);
+		its_all_good();
 	}
 	else {
-		echo 'Message Not Sent';
-		header('HTTP/1.1 500 Internal Server Error');
+		its_error();
 	}
 
 }
 else {
 	header('Location: ./#contact');
+}
+
+function its_bad($message = 'You must fill in all fields') {
+	echo $message;
+	header('HTTP/1.1 400 Bad Request');
+	die();
+}
+
+function its_error($message = 'There was an error sending your message') {
+	echo $message;
+	header('HTTP/1.1 500 Internal Server Error');
+	die();
+}
+
+function its_all_good($message = 'Message sent :)') {
+	echo $message;
+	die();
 }

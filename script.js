@@ -24,7 +24,14 @@ $(function() {
 	$('form').on('submit', function(e) {
 		e.preventDefault();
 		var $heading = $('.back.face h1')
+		,	$postmark = $('.postmark')
+		,	$sendButton = $('input.send')
+		;
+
 		$heading.find('span').remove();
+		$postmark.removeClass('sent');
+		$sendButton.hide();
+
 		$.ajax({
 			url: 'contact.php',
 			type: 'POST',
@@ -33,13 +40,16 @@ $(function() {
 				email: $('input[name=email]', this).val(),
 				message: $('textarea[name=message]', this).val()
 			},
-			success: function(data, textStaus, jqXHR) {
-				$heading.append('<span>Message Sent :)</span>');
-				$('.postmark').toggleClass('sent');
+			success: function(data, textStatus, jqXHR) {
+				$heading.append('<span>'+jqXHR.responseText+'</span>');
+				$('.postmark').addClass('sent');
+				$('input[type=text], input[type=email], textarea').val('');
 			},
-			error: function(jqXHR, textStaus, errorThrown) {
-				$heading.append('<span class="error">There was an error sending :\\</span>');
-				$('.postmark').removeClass('sent');
+			error: function(jqXHR, textStatus, errorThrown) {
+				$heading.append('<span class="error">'+jqXHR.responseText+'</span>');
+			},
+			complete: function(jqXHR, textStatus) {
+				$('input.send').show();
 			}
 		});
 	});
