@@ -38,14 +38,14 @@ else {
 }
 
 function its_bad($message = 'You must fill in all fields') {
-	echo $message;
 	header('HTTP/1.1 400 Bad Request');
+	echo $message;
 	die();
 }
 
 function its_error($message = 'There was an error sending your message') {
-	echo $message;
 	header('HTTP/1.1 500 Internal Server Error');
+	echo $message;
 	die();
 }
 
