@@ -550,6 +550,16 @@ h1 span.error { color: #ba2224; }
 		top: 0;
 		left: 0;
 	}
+	.face {
+		position: relative;
+		margin-bottom: 30px;
+		-webkit-backface-visibility: hidden;
+	}
+	.card.flip { -webkit-transform: none; }
+	.back.face {
+		-webkit-transform: none;
+		height: auto;
+	}
 	.block { margin: 0 0 0 -1px !important; }
 	.block div { bottom: 0 !important; left: 0px !important; }
 	.block:hover div { bottom: 0; left: 0; opacity: .9; }
