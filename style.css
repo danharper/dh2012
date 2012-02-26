@@ -480,6 +480,17 @@ h1 span.error { color: #ba2224; }
 		height: 630px;
 		margin-top: -315px;
 	}
+	
+	.face {
+		position: relative;
+		margin-bottom: 30px;
+		-webkit-backface-visibility: hidden;
+	}
+	.card.flip { -webkit-transform: none; }
+	.back.face {
+		-webkit-transform: none;
+		height: auto;
+	}
 
 	.block:nth-child(2n+1) { margin-left: 0; }
 	.block:nth-last-child(-n+2) { margin-bottom: 0; }
@@ -549,16 +560,6 @@ h1 span.error { color: #ba2224; }
 		position: relative;
 		top: 0;
 		left: 0;
-	}
-	.face {
-		position: relative;
-		margin-bottom: 30px;
-		-webkit-backface-visibility: hidden;
-	}
-	.card.flip { -webkit-transform: none; }
-	.back.face {
-		-webkit-transform: none;
-		height: auto;
 	}
 	.block { margin: 0 0 0 -1px !important; }
 	.block div { bottom: 0 !important; left: 0px !important; }
