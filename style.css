@@ -152,6 +152,10 @@ body { background: url(img/subtle_zebra_3d.png) repeat #eee; }
 	z-index: 1;
 }
 
+.back.face .return {
+	display: none;
+}
+
 .back.face header h1 {
 	display: inline-block;
 	float: left;
@@ -500,6 +504,20 @@ h1 span.error { color: #ba2224; }
 	.block:nth-last-child(2) div { bottom: -210px; left: -210px; }
 
 	.block:hover div { bottom: 0; left: 0; opacity: .9; }
+
+	h1 { max-width: 300px; }
+
+	textarea {
+		height: 280px;
+		max-height: 280px;
+	}
+
+	input.send {
+		right: -60px;
+		font-size: 1em;
+	}
+
+	img.sending { right: -45px; }
 }
 
 @media all and (max-height: 480px) and (min-width: 650px) { 
@@ -535,4 +553,17 @@ h1 span.error { color: #ba2224; }
 	.block { margin: 0 0 0 -1px !important; }
 	.block div { bottom: 0 !important; left: 0px !important; }
 	.block:hover div { bottom: 0; left: 0; opacity: .9; }
+	.back.face .stamp { display: none; }
+	.back.face .return {
+		color: #444;
+		display: block;
+		text-decoration: none;
+	}
+	form { width: 100%; }
+	input.send {
+		position: relative;
+		width: 100%;
+		right: 0;
+	}
+	img.sending { right: 50%; }
 }
