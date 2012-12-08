@@ -232,6 +232,7 @@ a.block { color: #222; text-decoration: none; }
 .block.twitter div     { background: url(img/twitter.png) center no-repeat #33ccff; }
 .block.gplus div       { background: url(img/googleplus.png) center no-repeat #121212; }
 .block.themeforest div { background: url(img/themeforest.png) center no-repeat #8c5e2d; }
+.block.blog div        { background: #cd041a; }
 
 .konami .block div {
 	bottom: 0;
